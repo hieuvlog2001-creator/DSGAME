@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DSGames Admin — Đăng nhập</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f7fb;color:#15213b;min-height:100vh;display:grid;place-items:center}
+.card{width:min(430px,calc(100% - 32px));background:#fff;border:1px solid #e5eaf3;border-radius:24px;padding:34px;box-shadow:0 18px 50px rgba(27,54,93,.10)}
+.logo{width:62px;height:62px;border-radius:18px;background:#3867e8;color:#fff;display:grid;place-items:center;font-size:30px;margin-bottom:18px}.brand{font-size:28px;font-weight:800}.sub{color:#7b8496;margin:6px 0 28px}.label{font-weight:700;font-size:13px;display:block;margin:0 0 8px}.input{width:100%;height:52px;border:1px solid #dbe2ee;border-radius:14px;padding:0 15px;font-size:16px;outline:none}.input:focus{border-color:#3867e8;box-shadow:0 0 0 3px rgba(56,103,232,.12)}button{width:100%;height:52px;border:0;border-radius:14px;background:#3867e8;color:#fff;font-weight:800;font-size:16px;margin-top:16px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.msg{min-height:22px;margin-top:14px;font-size:14px;color:#d04444}.hint{margin-top:22px;padding:13px 14px;background:#f2f6ff;border-radius:13px;color:#5d6d89;font-size:13px;line-height:1.5}
+</style></head><body>
+<div class="card"><div class="logo">🎮</div><div class="brand">DSGames Admin</div><div class="sub">Control Center · Đăng nhập quản trị</div>
+<label class="label" for="password">MẬT KHẨU ADMIN</label><input id="password" class="input" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu Admin">
+<button id="login">Đăng nhập</button><div id="msg" class="msg"></div>
+<div class="hint">Mật khẩu Admin được cấu hình trong <code>admin-config.js</code>. GitHub Token không được lưu trong file này.</div></div>
+<script src="admin-config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+async function doLogin(){
+  const p=$('password').value;
+  if(!p){$('msg').textContent='Vui lòng nhập mật khẩu Admin.';return}
+  $('login').disabled=true;$('msg').textContent='Đang xác thực...';
+  try{
+    if(p!==ADMIN_PASSWORD) throw new Error('Mật khẩu không đúng');
+    const r=await fetch(ADMIN_WORKER_URL+'/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:ADMIN_PASSWORD})});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||!j.ok) throw new Error(j.error==='invalid_password'?'Mật khẩu Admin trên Worker chưa khớp.':(j.error||'Không thể xác thực máy chủ.'));
+    sessionStorage.setItem('dsgames_admin_session',j.token);
+    sessionStorage.setItem('dsgames_admin_worker',ADMIN_WORKER_URL);
+    location.href='dashboard.html';
+  }catch(e){$('msg').textContent=e.message||'Đăng nhập thất bại.';$('login').disabled=false}
+}
+$('login').addEventListener('click',doLogin);
+$('password').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+</script></body></html>

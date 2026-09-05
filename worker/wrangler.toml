@@ -1,0 +1,10 @@
+name = "dsgame"
+main = "worker.js"
+compatibility_date = "2026-09-04"
+
+[[kv_namespaces]]
+binding = "DEVICES"
+id = "893701c625c24f568487018e5dddf4e1"
+
+[vars]
+GITHUB_RAW_KEYS = "https://raw.githubusercontent.com/hieuvlog2001-creator/DSGAME/main/keys.json"

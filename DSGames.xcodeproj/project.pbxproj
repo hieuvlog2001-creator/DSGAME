@@ -1,0 +1,40 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = { };
+ objectVersion = 56;
+ objects = {
+ 4F8AB1C1D9B1870EEB1EDA8F /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CLANG_ENABLE_MODULES = YES; CODE_SIGNING_ALLOWED = NO; CODE_SIGNING_REQUIRED = NO; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = DSGames/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 16.0; MARKETING_VERSION = 1.4; PRODUCT_BUNDLE_IDENTIFIER = com.dsgames.app; PRODUCT_NAME = DSGames; EXECUTABLE_NAME = DSGames; WRAPPER_EXTENSION = app; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+ 250399B80C950450524B5845 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CLANG_ENABLE_MODULES = YES; CODE_SIGNING_ALLOWED = NO; CODE_SIGNING_REQUIRED = NO; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = DSGames/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 16.0; MARKETING_VERSION = 1.4; PRODUCT_BUNDLE_IDENTIFIER = com.dsgames.app; PRODUCT_NAME = DSGames; EXECUTABLE_NAME = DSGames; WRAPPER_EXTENSION = app; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+ CF245C127FCA7DA2E8B4F35C /* Build configuration list for PBXNativeTarget */ = {isa = XCConfigurationList; buildConfigurations = (4F8AB1C1D9B1870EEB1EDA8F, 250399B80C950450524B5845); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+ CE93DF80DE720348888B204C /* Build configuration list for PBXProject */ = {isa = XCConfigurationList; buildConfigurations = (4F8AB1C1D9B1870EEB1EDA8F, 250399B80C950450524B5845); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+ 0CEE8E43AEC4C4C8AAEB8225 /* DSGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSGamesApp.swift; sourceTree = "<group>"; };
+ BCD7E08451FEA44A3AC81B6B /* DSGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE8E43AEC4C4C8AAEB8225; };
+ 47B8399D94D35C67B6A3EED0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+ A0D3F01A911924AB0797985F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8399D94D35C67B6A3EED0; };
+ 9ECB6B5E729AAFC79EE7F2D5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+ 198772ED7CE90CCD4BBEC904 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB6B5E729AAFC79EE7F2D5; };
+ C694D6908F22ABC839ECF00C /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
+ 1370F7481B45AE297F7A8408 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694D6908F22ABC839ECF00C; };
+ DC962E655AF74BC9E5BE48CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+ F5794628EA8ADEBAA651F43A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC962E655AF74BC9E5BE48CD; };
+ A1B2C3D4E5F60718293A4B5C /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+ B1C2D3E4F5061728394A5B6C /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C; };
+ C1D2E3F40516273849A5B6C7 /* LicenseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseStore.swift; sourceTree = "<group>"; };
+ D1E2F30415263748A9B5C6D7 /* LicenseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F40516273849A5B6C7; };
+ E1F2031425364758697A8B9C /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
+ F1E2031425364758697A8B9C /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2031425364758697A8B9C; };
+ 66462B1AE5E01D6959D379C4 /* games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "../games.json"; sourceTree = "<group>"; };
+ 93CF1069814C89B249ABB0AD /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = 66462B1AE5E01D6959D379C4; };
+ 34C7BCFCD6DE27E07AF20511 /* DSGames */ = {isa = PBXGroup; children = (0CEE8E43AEC4C4C8AAEB8225, 47B8399D94D35C67B6A3EED0, 9ECB6B5E729AAFC79EE7F2D5, C694D6908F22ABC839ECF00C, DC962E655AF74BC9E5BE48CD, A1B2C3D4E5F60718293A4B5C, C1D2E3F40516273849A5B6C7, E1F2031425364758697A8B9C, 66462B1AE5E01D6959D379C4); name = DSGames; path = DSGames; sourceTree = "<group>"; };
+ 27376E0C7D98A85EF39644D5 /* Products */ = {isa = PBXGroup; children = (7A1EC59902AFB561083624AC); name = Products; sourceTree = "<group>"; };
+ 0A2D64552D38D861D88C7D39 /* Main group */ = {isa = PBXGroup; children = (34C7BCFCD6DE27E07AF20511, 27376E0C7D98A85EF39644D5); sourceTree = "<group>"; };
+ 618F1122C97F2A4F1196BFB7 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (BCD7E08451FEA44A3AC81B6B, A0D3F01A911924AB0797985F, 198772ED7CE90CCD4BBEC904, 1370F7481B45AE297F7A8408, F5794628EA8ADEBAA651F43A, B1C2D3E4F5061728394A5B6C, D1E2F30415263748A9B5C6D7, F1E2031425364758697A8B9C); runOnlyForDeploymentPostprocessing = 0; };
+ 7228B63E0150643C7AB55AED /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (93CF1069814C89B249ABB0AD); runOnlyForDeploymentPostprocessing = 0; };
+ 6DDAA9C0EA5B0E693F0D1C16 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+ 7A1EC59902AFB561083624AC /* DSGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+ D235E907B104AF54B9AA4A20 /* DSGames */ = {isa = PBXNativeTarget; buildConfigurationList = CF245C127FCA7DA2E8B4F35C; buildPhases = (6DDAA9C0EA5B0E693F0D1C16, 618F1122C97F2A4F1196BFB7, 7228B63E0150643C7AB55AED); buildRules = (); dependencies = (); name = DSGames; productName = DSGames; productReference = 7A1EC59902AFB561083624AC; productType = "com.apple.product-type.application"; };
+ 9E88446A3F44B57E975BE17B /* Project object */ = {isa = PBXProject; attributes = {LastUpgradeCheck = 1640; TargetAttributes = {D235E907B104AF54B9AA4A20 = {CreatedOnToolsVersion = 16.4;};};}; buildConfigurationList = CE93DF80DE720348888B204C; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 0A2D64552D38D861D88C7D39; productRefGroup = 27376E0C7D98A85EF39644D5; projectDirPath = ""; projectRoot = ""; targets = (D235E907B104AF54B9AA4A20); };
+ };
+ rootObject = 9E88446A3F44B57E975BE17B /* Project object */;
+}

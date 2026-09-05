@@ -1,0 +1,51 @@
+name: Deploy DSGames Admin
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp Admin/index.html _site/index.html
+          cp Admin/dashboard.html _site/dashboard.html
+          cp Admin/admin-config.js _site/admin-config.js
+          if [ -f Admin/404.html ]; then cp Admin/404.html _site/404.html; fi
+          if [ -f games.json ]; then cp games.json _site/games.json; fi
+          if [ -f keys.json ]; then cp keys.json _site/keys.json; fi
+          if [ -f dsgames-config.json ]; then cp dsgames-config.json _site/dsgames-config.json; fi
+          touch _site/.nojekyll
+          find _site -maxdepth 2 -type f -print
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
