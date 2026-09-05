@@ -4,7 +4,7 @@ compatibility_date = "2026-09-04"
 
 [[kv_namespaces]]
 binding = "DEVICES"
-id = "893701c625c24f568487018e5dddf4e1"
+id = "ff9eaa1035a842f1a7a287fa56153adf"
 
 [vars]
 GITHUB_RAW_KEYS = "https://raw.githubusercontent.com/hieuvlog2001-creator/DSGAME/main/keys.json"
